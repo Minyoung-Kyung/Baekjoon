@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		final int INF = 1000000000;
-		int a, b, c;
+		int a, b;
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		

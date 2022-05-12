@@ -19,25 +19,25 @@ public class Main {
 		for (int i = 0; i < M; i++) {
 			StringTokenizer abToken = new StringTokenizer(br.readLine());
 			
-		    a = Integer.parseInt(abToken.nextToken());
-		    b = Integer.parseInt(abToken.nextToken());
+			a = Integer.parseInt(abToken.nextToken());
+			b = Integer.parseInt(abToken.nextToken());
 		    
-		    floyd[a][b] = 1; // a가 b보다 무거우면 1
+			floyd[a][b] = 1; // a가 b보다 무거우면 1
 			floyd[b][a] = -1; // b가 a보다 가벼우면 -1
 		}
 		
 		for (int i = 1; i <= N; i++) {
-		    for (int j = 1; j <= N; j++) {
-		        for (int k = 1; k <= N; k++) {
-		            if (floyd[j][i] == 1 && floyd[i][k] == 1) { // a > b, b > c
-		            	floyd[j][k] = 1; // a > c
-		            }
-		            
-		            if (floyd[j][i] == -1 && floyd[i][k] == -1) { // a < b, b < c
-		            	floyd[j][k] = -1; // a < c
-		            }
-		        }
-		    }
+			for (int j = 1; j <= N; j++) {
+				for (int k = 1; k <= N; k++) {
+					if (floyd[j][i] == 1 && floyd[i][k] == 1) { // a > b, b > c
+						floyd[j][k] = 1; // a > c
+					}
+					
+					if (floyd[j][i] == -1 && floyd[i][k] == -1) { // a < b, b < c
+						floyd[j][k] = -1; // a < c
+					}
+				}
+			}
 		}
 		
 		for (int i = 1; i <= N; i++) {
@@ -54,5 +54,5 @@ public class Main {
 		}
 		
 		System.out.println(answer);
-    }
+	}
 }

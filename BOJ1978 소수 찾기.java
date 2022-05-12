@@ -22,24 +22,24 @@ public class Main {
 			i++;
 		}
         
-        for (int j = 0; j < arr.length; j++) {
-            isPrime = true; // isPrime은 j가 증가할 때마다 true로 초기화
-            
-            if (arr[j] >= 2) {
-            	if (isPrime(arr[j])) answer++;
-            }
-        }
+		for (int j = 0; j < arr.length; j++) {
+			isPrime = true; // isPrime은 j가 증가할 때마다 true로 초기화
+
+			if (arr[j] >= 2) {
+				if (isPrime(arr[j])) answer++; // arr[j]가 소수인 경우 answer 증가
+			}
+		}
 		
 		System.out.println(answer);
-    }
+	} // end main
 	
 	public static boolean isPrime(int n) {
 		for (int k = 2; k <= (int) Math.sqrt(n); k++) {
-        	if (n % k == 0) {
-        		return false;
-        	}
-        }
+			if (n % k == 0) {
+				return false;
+			}
+		}
 		
 		return true;
-	}
+	} // end isPrime
 }

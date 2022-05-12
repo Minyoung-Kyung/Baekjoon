@@ -30,14 +30,14 @@ public class Main {
 			a = Integer.parseInt(token.nextToken());
 			b = Integer.parseInt(token.nextToken());
 
-      if (a == -1 && b == -1) { // 마지막 줄에서 -1을 만나면 break
+      			if (a == -1 && b == -1) { // 마지막 줄에서 -1을 만나면 break
 				break;
 			} else { // a와 b는 친구
 				floyd[a][b] = floyd[b][a] = 1;
 			}
 		}
 
-    // 어떤 두 회원이 친구사이이면서 동시에 친구의 친구사이이면, 이 두사람은 친구사이
+    		// 어떤 두 회원이 친구사이이면서 동시에 친구의 친구사이이면, 이 두사람은 친구사이
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= n; j++) {
 				for (int k = 1; k <= n; k++) {

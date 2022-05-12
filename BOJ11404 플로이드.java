@@ -25,34 +25,34 @@ public class Main {
 		for (int i = 0; i < m; i++) {
 			StringTokenizer token = new StringTokenizer(br.readLine());
 			
-		    a = Integer.parseInt(token.nextToken()); // 버스의 시작 도시
-		    b = Integer.parseInt(token.nextToken()); // 버스의 도착 도시
-		    c = Integer.parseInt(token.nextToken()); // 한 번 타는데 필요한 최소 비용
+			a = Integer.parseInt(token.nextToken()); // 버스의 시작 도시
+			b = Integer.parseInt(token.nextToken()); // 버스의 도착 도시
+			c = Integer.parseInt(token.nextToken()); // 한 번 타는데 필요한 최소 비용
 		    
-		    floyd[a][b] = Math.min(floyd[a][b], c);
+			floyd[a][b] = Math.min(floyd[a][b], c);
 		}
 		
 		for (int i = 1; i <= n; i++) { // 경유지
-		    for (int j = 1; j <= n; j++) { // 출발지
-		        for (int k = 1; k <= n; k++) { // 목적지
-		            floyd[j][k] = Math.min(floyd[j][i] + floyd[i][k], floyd[j][k]); // 최단 경로 초기화 (최솟값을 저장)
-		        }
-		    }
+			for (int j = 1; j <= n; j++) { // 출발지
+				for (int k = 1; k <= n; k++) { // 목적지
+					floyd[j][k] = Math.min(floyd[j][i] + floyd[i][k], floyd[j][k]); // 최단 경로 초기화 (최솟값을 저장)
+				}
+			}
 		}
 		
 		for (int i = 1; i <= n; i++) {
 			StringBuilder sb = new StringBuilder();
 			
-		    for (int j = 1; j <= n; j++) {
-		    	if (floyd[i][j] >= INF) { // i에서 j로 갈 수 없는 경우에는 그 자리에 0을 출력
-		    		floyd[i][j] = 0;
-		    	}
+			for (int j = 1; j <= n; j++) {
+				if (floyd[i][j] >= INF) { // i에서 j로 갈 수 없는 경우에는 그 자리에 0을 출력
+					floyd[i][j] = 0;
+				}
 		    	
-		    	sb.append(floyd[i][j]).append(" ");
-		    }
+				sb.append(floyd[i][j]).append(" ");
+			}
 		    
-		    String result = sb.toString().trim();
-		    System.out.println(result);
+			String result = sb.toString().trim(); // 공백 제거
+			System.out.println(result);
 		}
 	}
 }

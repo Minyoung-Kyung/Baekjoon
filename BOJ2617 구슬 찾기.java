@@ -45,12 +45,12 @@ public class Main {
 			int lose = 0;
 			int middle = (N + 1) / 2; // 중간 구슬의 번호
 			
-		    for (int j = 1; j <= N; j++) {
-		    	if (floyd[i][j] == 1) win++;
-		    	else if (floyd[i][j] == -1) lose++;
-		    }
-		    
-		    if (win >= middle || lose >= middle) answer++;
+			for (int j = 1; j <= N; j++) {
+				if (floyd[i][j] == 1) win++;
+				else if (floyd[i][j] == -1) lose++;
+			}
+
+			if (win >= middle || lose >= middle) answer++;
 		}
 		
 		System.out.println(answer);

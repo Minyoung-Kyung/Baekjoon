@@ -49,6 +49,6 @@ public class Main {
 			
             // 자신의 키가 몇 번째인지 알 수 있는 학생이 모두 몇 명인지 출력
             System.out.println(answer);
-		    }
+	}
     }
 }
